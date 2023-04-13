@@ -53,8 +53,8 @@ class MyGUI:
             self.obj_pchealthlogic=pchealthlogic.PCHealth()
             self.entry_free_disk_space.delete(0,tkinter.END)
             self.entry_per_cpu_usage.delete(0,tkinter.END)
-            self.entry_free_disk_space.insert(0, self.obj_pchealthlogic.get_free_disk_space())
-            self.entry_per_cpu_usage.insert(0,self.obj_pchealthlogic.get_per_cpu_usage())
+            self.entry_free_disk_space.insert(0, str(self.obj_pchealthlogic.get_free_disk_space())+"%")
+            self.entry_per_cpu_usage.insert(0,str(self.obj_pchealthlogic.get_per_cpu_usage())+"%")
             if self.obj_pchealthlogic.is_free_disk_space_ok():
                 self.entry_free_disk_space.config(fg="green")
             else:
